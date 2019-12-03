@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="myDatabaseConfig"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>persistanceModel.Product</class>
+        <class>persistanceModel.Supplier</class>
+        <class>persistanceModel.Category</class>
+        <class>persistanceModel.Invoice</class>
+        <class>persistanceModel.Address</class>
+        <class>persistanceModel.Company</class>
+        <class>persistanceModel.Customer</class>
+        <properties>
+            <property name="hibernate.connection.driver_class"
+                      value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="hibernate.connection.url"
+                      value="jdbc:derby://127.0.0.1/DatabaseJPA"/>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+        </properties>
+    </persistence-unit>
+</persistence>
